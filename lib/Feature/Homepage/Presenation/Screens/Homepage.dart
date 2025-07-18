@@ -167,44 +167,39 @@ class _HeaderPartState extends State<Homepage> {
                       CrossAxCount: 10,
                       GridLength: state.PhoneList.length,
                       ontap: (index) {
-                        // final product = state.PhoneList;
-                        // print("Product tapped: ${product[index].title}");
-                        // context.read<CategoryBloc>().add(
-                        //   NavigateToDetails(product[index]),
-                        // );
 
-                          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => ProductDetails(
-                productImage: state.PhoneList[index].images,
-                productName: state.PhoneList[index].title,
-                productPrice: state.PhoneList[index].price,
-                DiscountPrice: state.PhoneList[index].discountPercentage,
-                productdescription: state.PhoneList[index].description,
-                rating: state.PhoneList[index].rating,
-                Shipping: state.PhoneList[index].shippingInformation,
-                warranty: state.PhoneList[index].warrantyInformation,
-              ),
-            ),
-          );
+          //                 Navigator.push(
+          //   context,
+          //   MaterialPageRoute(
+          //     builder: (context) => ProductDetails(
+          //       productImage: state.PhoneList[index].images,
+          //       productName: state.PhoneList[index].title,
+          //       productPrice: state.PhoneList[index].price,
+          //       DiscountPrice: state.PhoneList[index].discountPercentage,
+          //       productdescription: state.PhoneList[index].description,
+          //       rating: state.PhoneList[index].rating,
+          //       Shipping: state.PhoneList[index].shippingInformation,
+          //       warranty: state.PhoneList[index].warrantyInformation,
+          //     ),
+          //   ),
+          // );
 
 
 
 
-//           context.push(
-//   '/product-details',
-//   extra: ProductDetailsArgs(
-//     productImage: state.PhoneList[index].images,
-//     productName: state.PhoneList[index].title,
-//     productPrice: state.PhoneList[index].price,
-//     DiscountPrice: state.PhoneList[index].discountPercentage,
-//     productdescription: state.PhoneList[index].description,
-//     rating: state.PhoneList[index].rating,
-//     Shipping: state.PhoneList[index].shippingInformation,
-//     warranty: state.PhoneList[index].warrantyInformation,
-//   ),
-// );
+          context.push(
+  '/productDetails',
+  extra: ProductDetailsArgs(
+    productImage: state.PhoneList[index].images,
+    productName: state.PhoneList[index].title,
+    productPrice: state.PhoneList[index].price,
+    DiscountPrice: state.PhoneList[index].discountPercentage,
+    productdescription: state.PhoneList[index].description,
+    rating: state.PhoneList[index].rating,
+    Shipping: state.PhoneList[index].shippingInformation,
+    warranty: state.PhoneList[index].warrantyInformation,
+  ),
+);
                       },
                     ),
                   ),
@@ -229,27 +224,31 @@ class _HeaderPartState extends State<Homepage> {
                       CrossAxCount: 10,
                       GridLength: state.Featuredproducts.length,
                       ontap: (index) {
-                        // final product = state.Featuredproducts;
-                        // print("Product tapped: ${product[index].title}");
-                        // context.read<CategoryBloc>().add(
-                        //   NavigateToProductdetails(product![index]),
-                        // );
+                       
 
-                        Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => ProductDetails(
-                productImage: state.Featuredproducts[index].images,
-                productName: state.Featuredproducts[index].title,
-                productPrice: state.Featuredproducts[index].price,
-                DiscountPrice: state.Featuredproducts[index].discountPercentage,
-                productdescription: state.Featuredproducts[index].description,
-                rating: state.Featuredproducts[index].rating,
-                Shipping: state.Featuredproducts[index].shippingInformation,
-                warranty: state.Featuredproducts[index].warrantyInformation,
-              ),
-            ),
-          );
+          //               Navigator.push(
+          //   context,
+          //   MaterialPageRoute(
+          //     builder: (context) => ProductDetails(
+          //    product: ProductDetailsArgs(productImage: productImage, productName: productName, productPrice: productPrice, DiscountPrice: DiscountPrice, productdescription: productdescription, rating: rating, Shipping: Shipping, warranty: warranty)
+          //     ),
+          //   ),
+          // );
+
+
+            context.push(
+  '/productDetails',
+  extra: ProductDetailsArgs(
+    productImage: state.Featuredproducts[index].images,
+    productName: state.Featuredproducts[index].title,
+    productPrice: state.Featuredproducts[index].price,
+    DiscountPrice: state.Featuredproducts[index].discountPercentage,
+    productdescription: state.Featuredproducts[index].description,
+    rating: state.Featuredproducts[index].rating,
+    Shipping: state.Featuredproducts[index].shippingInformation,
+    warranty: state.Featuredproducts[index].warrantyInformation,
+  ),
+);
                       },
                     ),
                   ),

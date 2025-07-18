@@ -19,3 +19,15 @@ class ProductDetailsArgs {
     required this.warranty,
   });
 }
+
+class CheckoutModel {
+  final String productName;
+  final double productPrice;
+  final List<String> thumbnail;
+
+  CheckoutModel({
+    required this.productName,
+    required this.productPrice,
+    required this.thumbnail,
+  });
+}

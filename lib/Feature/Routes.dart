@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_website_task/Feature/Homepage/Data/Category/Categorymodel.dart';
 import 'package:flutter_website_task/Feature/Homepage/Presenation/Screens/Homepage.dart';
 import 'package:flutter_website_task/Feature/ProductDetails/Presentation/Data/Model.dart';
+import 'package:flutter_website_task/Feature/ProductDetails/Presentation/Screens/CheckoutPage.dart';
 import 'package:flutter_website_task/Feature/ProductDetails/Presentation/Screens/ProductDetails.dart';
 import 'package:flutter_website_task/Feature/Register/Register.dart';
 import 'package:flutter_website_task/test.dart';
@@ -18,13 +18,43 @@ final GoRouter router = GoRouter(
       path: '/register',
       builder: (context, state) => Register(),
     ),
-// GoRoute(
-//   path: '/productDetails',
+//    GoRoute(
+//   path: '/product-details',
 //   builder: (context, state) {
-//     final product = state.extra as ProductModel;
-//     return ProductDetails(product: product);
+//     final product = state.extra as ProductDetailsArgs;
+//     return ProductDetails(
+//       productImage: product.productImage,
+//       productName: product.productName,
+//       productPrice: product.productPrice,
+//       DiscountPrice: product.DiscountPrice,
+//       productdescription: product.productdescription,
+//       rating: product.rating,
+//       Shipping: product.Shipping,
+//       warranty: product.warranty,
+//     );
 //   },
 // ),
+
+   GoRoute(
+      path: '/productDetails',
+      builder: (context, state) {
+       final product = state.extra is ProductDetailsArgs 
+       
+       
+       
+       ? state.extra as ProductDetailsArgs : null;
+    return ProductDetails(product: product);
+
+      },
+    ),
+   GoRoute(
+      path: '/Checkout',
+      builder: (context, state) {
+         final checkout = state.extra as CheckoutModel;
+         return Checkoutpage(checkout: checkout,);
+
+      },
+    ),
 
 
   ],

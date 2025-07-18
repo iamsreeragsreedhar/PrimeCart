@@ -1,19 +1,18 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:flutter_website_task/Core/Utils/HeaderPart.dart';
 import 'package:flutter_website_task/Core/Utils/Widgets.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_website_task/Feature/ProductDetails/Presentation/Data/Model.dart';
 import 'package:flutter_website_task/Feature/ProductDetails/Presentation/Screens/PlaceOrder.dart';
 
 class Checkoutpage extends StatefulWidget {
-  final String ProdctName;
-  final double Prodctprice;
-  final List<String> thumbnail;
+final CheckoutModel checkout;
   const Checkoutpage({
-    super.key,
-    required this.ProdctName,
-    required this.Prodctprice,
-    required this.thumbnail,
-  });
+    Key? key,
+    required this.checkout,
+  }) : super(key: key);
 
   @override
   State<Checkoutpage> createState() => _CheckoutpageState();
@@ -56,7 +55,7 @@ class _CheckoutpageState extends State<Checkoutpage> {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8.r),
                         child: Image.network(
-                          widget.thumbnail[0],
+                          widget.checkout.thumbnail[0],
 
                           fit: BoxFit.contain,
                           errorBuilder: (context, error, stackTrace) {
@@ -83,7 +82,7 @@ class _CheckoutpageState extends State<Checkoutpage> {
                             children: [
                               Expanded(
                                 child: Text(
-                                  widget.ProdctName,
+                                  widget.checkout.productName,
                                   style: TextStyle(
                                     fontSize: 20.sp,
                                     color: Colors.black,
@@ -112,7 +111,7 @@ class _CheckoutpageState extends State<Checkoutpage> {
                           ),
                           SizedBox(height: 8.h),
                           Text(
-                            widget.Prodctprice.toString(),
+                            widget.checkout.productPrice.toString(),
                             style: TextStyle(
                               fontSize: 16.sp,
                               fontWeight: FontWeight.w600,
@@ -175,7 +174,7 @@ class _CheckoutpageState extends State<Checkoutpage> {
                                   ),
                                 ),
                                 Text(
-                                  '+ ${widget.Prodctprice.toString()}',
+                                  '+ ${widget.checkout.productPrice.toString()}',
                                   style: TextStyle(
                                     fontSize: 14.sp,
                                     color: Colors.black,
@@ -198,7 +197,7 @@ class _CheckoutpageState extends State<Checkoutpage> {
                                   ),
                                 ),
                                 Text(
-                                  '₹${widget.Prodctprice.toString()}',
+                                  '₹${widget.checkout.productPrice.toString()}',
                                   style: TextStyle(
                                     fontSize: 16.sp,
                                     fontWeight: FontWeight.w600,
@@ -222,14 +221,14 @@ class _CheckoutpageState extends State<Checkoutpage> {
                               child: ElevatedButton(
                                 onPressed: () {
                                   // Navigator.push(context, MaterialPageRoute(builder: (context)=>Placeorder(productName: widget.ProdctName,productPrice: widget.Prodctprice,)));
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => PaymentMethodPage(
-                                        productPrice: widget.Prodctprice,
-                                      ),
-                                    ),
-                                  );
+                                  // Navigator.push(
+                                  //   context,
+                                  //   MaterialPageRoute(
+                                  //     builder: (context) => PaymentMethodPage(
+                                  //       productPrice: widget.Prodctprice,
+                                  //     ),
+                                  //   ),
+                                  // );
                                 },
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: Colors.purple,
