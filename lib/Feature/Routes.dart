@@ -43,8 +43,6 @@ GoRoute(
   path: '/productDetails',
   builder: (context, state) {
     final categoryState = context.watch<CategoryBloc>().state;
-
-    
     if (categoryState.selecteddetails != null) {
       return ProductDetails(product: categoryState.selecteddetails!);
     } else {
