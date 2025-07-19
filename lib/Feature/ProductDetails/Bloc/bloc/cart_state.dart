@@ -8,6 +8,7 @@ abstract class CartState with _$CartState {
     required bool isLoading,
     required String? errorMessage,
     required String? StatusMessage,
+    required ProductDetailsArgs? selecteddetails,
   }) = CartStateData;
   factory CartState.initial() => CartState(
     cartItems: [],
@@ -15,5 +16,6 @@ abstract class CartState with _$CartState {
     isLoading: false,
     errorMessage: null,
     StatusMessage: null,
+    selecteddetails:null
   );
 }

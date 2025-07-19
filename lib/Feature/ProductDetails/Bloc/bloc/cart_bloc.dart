@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter_website_task/Feature/Homepage/Data/Category/Categorymodel.dart';
+import 'package:flutter_website_task/Feature/ProductDetails/Presentation/Data/Model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'cart_event.dart';
@@ -14,6 +15,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     on<RemovefromCart>(_onRemoveFromCart);
     on<ClearCart>(_onClearCart);
     on<DisplayCartProduct>(_onDisplayCartProduct);
+     on<Selectedproducts>(_onGetdetailsProducts);
   }
   List<PhoneModel> updatedCart = [];
 
@@ -57,5 +59,8 @@ class CartBloc extends Bloc<CartEvent, CartState> {
       emit(state.copyWith(cartItems: updatedCart));
     }
     emit(state.copyWith(StatusMessage: "Displaying cart products..."));
+  }
+  Future<void>_onGetdetailsProducts(Selectedproducts event,Emitter<CartState> emit,)async{
+    emit(state.copyWith(selecteddetails:event.products));
   }
 }

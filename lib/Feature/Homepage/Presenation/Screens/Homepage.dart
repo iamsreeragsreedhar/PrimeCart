@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_website_task/Feature/ProductDetails/Bloc/bloc/cart_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -40,49 +41,7 @@ class _HeaderPartState extends State<Homepage> {
   Widget build(BuildContext context) {
     return BlocConsumer<CategoryBloc, CategoryState>(
       listener: (context, state) {
-        // if (state.selectedProductdetails != null) {
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (context) => ProductDetails(
-          //       productImage: state.selectedProductdetails!.images,
-          //       productName: state.selectedProductdetails!.title,
-          //       productPrice: state.selectedProductdetails!.price,
-          //       DiscountPrice: state.selectedProductdetails!.discountPercentage,
-          //       productdescription: state.selectedProductdetails!.description,
-          //       rating: state.selectedProductdetails!.rating,
-          //       Shipping: state.selectedProductdetails!.shippingInformation,
-          //       warranty: state.selectedProductdetails!.warrantyInformation,
-          //     ),
-          //   ),
-          // );
-
-        //   context.read<CategoryBloc>().emit(
-        //     state.copyWith(selectedProduct: null),
-        //   );
-        // }
-
-        // if (state.selectedProduct != null) {
-        //   Navigator.push(
-        //     context,
-        //     MaterialPageRoute(
-        //       builder: (context) => ProductDetails(
-        //         productImage: state.selectedProduct!.images,
-        //         productName: state.selectedProduct!.title,
-        //         productPrice: state.selectedProduct!.price,
-        //         DiscountPrice: state.selectedProduct!.discountPercentage,
-        //         productdescription: state.selectedProduct!.description,
-        //         rating: state.selectedProduct!.rating,
-        //         Shipping: state.selectedProduct!.shippingInformation,
-        //         warranty: state.selectedProduct!.warrantyInformation,
-        //       ),
-        //     ),
-        //   );
-
-        //   context.read<CategoryBloc>().emit(
-        //     state.copyWith(selectedProduct: null),
-        //   );
-        // }
+      
       },
       builder: (context, state) {
         return Scaffold(
@@ -168,53 +127,31 @@ class _HeaderPartState extends State<Homepage> {
                       GridLength: state.PhoneList.length,
                       ontap: (index) {
 
-          //                 Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (context) => ProductDetails(
-          //       productImage: state.PhoneList[index].images,
-          //       productName: state.PhoneList[index].title,
-          //       productPrice: state.PhoneList[index].price,
-          //       DiscountPrice: state.PhoneList[index].discountPercentage,
-          //       productdescription: state.PhoneList[index].description,
-          //       rating: state.PhoneList[index].rating,
-          //       Shipping: state.PhoneList[index].shippingInformation,
-          //       warranty: state.PhoneList[index].warrantyInformation,
-          //     ),
-          //   ),
-          // );
+                        context.read<CartBloc>().add(
+                          Selectedproducts(
+                            ProductDetailsArgs(
+                              productImage: state.PhoneList[index].images,
+                              productName: state.PhoneList[index].title,
+                              DiscountPrice:
+                                  state.PhoneList[index].discountPercentage,
+                              Shipping:
+                                  state.PhoneList[index].shippingInformation,
+                              productPrice: state.PhoneList[index].price,
+                              productdescription:
+                                  state.PhoneList[index].description,
+                              rating: state.PhoneList[index].rating,
+                              warranty:
+                                  state.PhoneList[index].warrantyInformation,
+                            ),
+                          ),
+                        );
 
-
-context.read<CategoryBloc>().add(Selectedproducts(ProductDetailsArgs(productImage:state.PhoneList[index].images,
-productName: state.PhoneList[index].title,
-DiscountPrice:  state.PhoneList[index].discountPercentage,
-Shipping: state.PhoneList[index].shippingInformation,
-productPrice: state.PhoneList[index].price,
-productdescription: state.PhoneList[index].description,
-rating: state.PhoneList[index].rating,
-warranty: state.PhoneList[index].warrantyInformation
- )));
-
-          context.push(
-  '/productDetails',
-);
+                        context.push('/productDetails');
                       },
                     ),
                   ),
                   HeadingText("Featured Products", 25.sp),
                   SizedBox(height: 20.h),
-                  //  SizedBox(
-                  //   height: 350.h,
-                  //   child: NewGridview(
-                  //     PrdouctList: state.products,
-                  //     CrossAxCount: 10,
-                  //     GridLength:10,
-                  //     ontap: (index) {
-                  //      final product = state.products;
-                  //       print("Product tapped: ${product[index].title}");
-                  //       context.read<CategoryBloc>().add(NavigateToProductdetails(product[index]));
-                  //     },
-                  //   )),
                   SizedBox(
                     height: 350.h,
                     child: PhoneGridView(
@@ -223,35 +160,35 @@ warranty: state.PhoneList[index].warrantyInformation
                       GridLength: state.Featuredproducts.length,
                       ontap: (index) {
                        
+                        context.read<CartBloc>().add(
+                          Selectedproducts(
+                            ProductDetailsArgs(
+                              productImage:
+                                  state.Featuredproducts[index].images,
+                              productName: state.Featuredproducts[index].title,
+                              DiscountPrice: state
+                                  .Featuredproducts[index]
+                                  .discountPercentage,
+                              Shipping: state
+                                  .Featuredproducts[index]
+                                  .shippingInformation,
+                              productPrice: state.Featuredproducts[index].price,
+                              productdescription:
+                                  state.Featuredproducts[index].description,
+                              rating: state.Featuredproducts[index].rating,
+                              warranty: state
+                                  .Featuredproducts[index]
+                                  .warrantyInformation,
+                            ),
+                          ),
+                        );
 
-          //               Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (context) => ProductDetails(
-          //    product: ProductDetailsArgs(productImage: productImage, productName: productName, productPrice: productPrice, DiscountPrice: DiscountPrice, productdescription: productdescription, rating: rating, Shipping: Shipping, warranty: warranty)
-          //     ),
-          //   ),
-          // );
-
-
-            context.push(
-  '/productDetails',
-  extra: ProductDetailsArgs(
-    productImage: state.Featuredproducts[index].images,
-    productName: state.Featuredproducts[index].title,
-    productPrice: state.Featuredproducts[index].price,
-    DiscountPrice: state.Featuredproducts[index].discountPercentage,
-    productdescription: state.Featuredproducts[index].description,
-    rating: state.Featuredproducts[index].rating,
-    Shipping: state.Featuredproducts[index].shippingInformation,
-    warranty: state.Featuredproducts[index].warrantyInformation,
-  ),
-);
+                        context.push('/productDetails');
                       },
                     ),
                   ),
 
-                  //
+                  
                 ],
               ),
             ),

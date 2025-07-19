@@ -55,7 +55,7 @@ extension CategoryEventPatterns on CategoryEvent {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( FetchCategories value)?  fetchCategories,TResult Function( FeaturedProducts value)?  featuredProducts,TResult Function( TopBrands value)?  topBrands,TResult Function( NavigateToDetails value)?  navigateToDetails,TResult Function( NavigateToProductdetails value)?  navigateToProductdetails,TResult Function( GetAllProducts value)?  getAllProducts,TResult Function( AddtoCart value)?  addtoCart,TResult Function( Selectedproducts value)?  selectedproducts,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( FetchCategories value)?  fetchCategories,TResult Function( FeaturedProducts value)?  featuredProducts,TResult Function( TopBrands value)?  topBrands,TResult Function( NavigateToDetails value)?  navigateToDetails,TResult Function( NavigateToProductdetails value)?  navigateToProductdetails,TResult Function( GetAllProducts value)?  getAllProducts,TResult Function( AddtoCart value)?  addtoCart,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case FetchCategories() when fetchCategories != null:
@@ -65,8 +65,7 @@ return topBrands(_that);case NavigateToDetails() when navigateToDetails != null:
 return navigateToDetails(_that);case NavigateToProductdetails() when navigateToProductdetails != null:
 return navigateToProductdetails(_that);case GetAllProducts() when getAllProducts != null:
 return getAllProducts(_that);case AddtoCart() when addtoCart != null:
-return addtoCart(_that);case Selectedproducts() when selectedproducts != null:
-return selectedproducts(_that);case _:
+return addtoCart(_that);case _:
   return orElse();
 
 }
@@ -84,7 +83,7 @@ return selectedproducts(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( FetchCategories value)  fetchCategories,required TResult Function( FeaturedProducts value)  featuredProducts,required TResult Function( TopBrands value)  topBrands,required TResult Function( NavigateToDetails value)  navigateToDetails,required TResult Function( NavigateToProductdetails value)  navigateToProductdetails,required TResult Function( GetAllProducts value)  getAllProducts,required TResult Function( AddtoCart value)  addtoCart,required TResult Function( Selectedproducts value)  selectedproducts,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( FetchCategories value)  fetchCategories,required TResult Function( FeaturedProducts value)  featuredProducts,required TResult Function( TopBrands value)  topBrands,required TResult Function( NavigateToDetails value)  navigateToDetails,required TResult Function( NavigateToProductdetails value)  navigateToProductdetails,required TResult Function( GetAllProducts value)  getAllProducts,required TResult Function( AddtoCart value)  addtoCart,}){
 final _that = this;
 switch (_that) {
 case FetchCategories():
@@ -94,8 +93,7 @@ return topBrands(_that);case NavigateToDetails():
 return navigateToDetails(_that);case NavigateToProductdetails():
 return navigateToProductdetails(_that);case GetAllProducts():
 return getAllProducts(_that);case AddtoCart():
-return addtoCart(_that);case Selectedproducts():
-return selectedproducts(_that);case _:
+return addtoCart(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -112,7 +110,7 @@ return selectedproducts(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( FetchCategories value)?  fetchCategories,TResult? Function( FeaturedProducts value)?  featuredProducts,TResult? Function( TopBrands value)?  topBrands,TResult? Function( NavigateToDetails value)?  navigateToDetails,TResult? Function( NavigateToProductdetails value)?  navigateToProductdetails,TResult? Function( GetAllProducts value)?  getAllProducts,TResult? Function( AddtoCart value)?  addtoCart,TResult? Function( Selectedproducts value)?  selectedproducts,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( FetchCategories value)?  fetchCategories,TResult? Function( FeaturedProducts value)?  featuredProducts,TResult? Function( TopBrands value)?  topBrands,TResult? Function( NavigateToDetails value)?  navigateToDetails,TResult? Function( NavigateToProductdetails value)?  navigateToProductdetails,TResult? Function( GetAllProducts value)?  getAllProducts,TResult? Function( AddtoCart value)?  addtoCart,}){
 final _that = this;
 switch (_that) {
 case FetchCategories() when fetchCategories != null:
@@ -122,8 +120,7 @@ return topBrands(_that);case NavigateToDetails() when navigateToDetails != null:
 return navigateToDetails(_that);case NavigateToProductdetails() when navigateToProductdetails != null:
 return navigateToProductdetails(_that);case GetAllProducts() when getAllProducts != null:
 return getAllProducts(_that);case AddtoCart() when addtoCart != null:
-return addtoCart(_that);case Selectedproducts() when selectedproducts != null:
-return selectedproducts(_that);case _:
+return addtoCart(_that);case _:
   return null;
 
 }
@@ -140,7 +137,7 @@ return selectedproducts(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  fetchCategories,TResult Function()?  featuredProducts,TResult Function()?  topBrands,TResult Function( PhoneModel product)?  navigateToDetails,TResult Function( PhoneModel product)?  navigateToProductdetails,TResult Function()?  getAllProducts,TResult Function()?  addtoCart,TResult Function( ProductDetailsArgs products)?  selectedproducts,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  fetchCategories,TResult Function()?  featuredProducts,TResult Function()?  topBrands,TResult Function( PhoneModel product)?  navigateToDetails,TResult Function( PhoneModel product)?  navigateToProductdetails,TResult Function()?  getAllProducts,TResult Function()?  addtoCart,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case FetchCategories() when fetchCategories != null:
 return fetchCategories();case FeaturedProducts() when featuredProducts != null:
@@ -149,8 +146,7 @@ return topBrands();case NavigateToDetails() when navigateToDetails != null:
 return navigateToDetails(_that.product);case NavigateToProductdetails() when navigateToProductdetails != null:
 return navigateToProductdetails(_that.product);case GetAllProducts() when getAllProducts != null:
 return getAllProducts();case AddtoCart() when addtoCart != null:
-return addtoCart();case Selectedproducts() when selectedproducts != null:
-return selectedproducts(_that.products);case _:
+return addtoCart();case _:
   return orElse();
 
 }
@@ -168,7 +164,7 @@ return selectedproducts(_that.products);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  fetchCategories,required TResult Function()  featuredProducts,required TResult Function()  topBrands,required TResult Function( PhoneModel product)  navigateToDetails,required TResult Function( PhoneModel product)  navigateToProductdetails,required TResult Function()  getAllProducts,required TResult Function()  addtoCart,required TResult Function( ProductDetailsArgs products)  selectedproducts,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  fetchCategories,required TResult Function()  featuredProducts,required TResult Function()  topBrands,required TResult Function( PhoneModel product)  navigateToDetails,required TResult Function( PhoneModel product)  navigateToProductdetails,required TResult Function()  getAllProducts,required TResult Function()  addtoCart,}) {final _that = this;
 switch (_that) {
 case FetchCategories():
 return fetchCategories();case FeaturedProducts():
@@ -177,8 +173,7 @@ return topBrands();case NavigateToDetails():
 return navigateToDetails(_that.product);case NavigateToProductdetails():
 return navigateToProductdetails(_that.product);case GetAllProducts():
 return getAllProducts();case AddtoCart():
-return addtoCart();case Selectedproducts():
-return selectedproducts(_that.products);case _:
+return addtoCart();case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -195,7 +190,7 @@ return selectedproducts(_that.products);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  fetchCategories,TResult? Function()?  featuredProducts,TResult? Function()?  topBrands,TResult? Function( PhoneModel product)?  navigateToDetails,TResult? Function( PhoneModel product)?  navigateToProductdetails,TResult? Function()?  getAllProducts,TResult? Function()?  addtoCart,TResult? Function( ProductDetailsArgs products)?  selectedproducts,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  fetchCategories,TResult? Function()?  featuredProducts,TResult? Function()?  topBrands,TResult? Function( PhoneModel product)?  navigateToDetails,TResult? Function( PhoneModel product)?  navigateToProductdetails,TResult? Function()?  getAllProducts,TResult? Function()?  addtoCart,}) {final _that = this;
 switch (_that) {
 case FetchCategories() when fetchCategories != null:
 return fetchCategories();case FeaturedProducts() when featuredProducts != null:
@@ -204,8 +199,7 @@ return topBrands();case NavigateToDetails() when navigateToDetails != null:
 return navigateToDetails(_that.product);case NavigateToProductdetails() when navigateToProductdetails != null:
 return navigateToProductdetails(_that.product);case GetAllProducts() when getAllProducts != null:
 return getAllProducts();case AddtoCart() when addtoCart != null:
-return addtoCart();case Selectedproducts() when selectedproducts != null:
-return selectedproducts(_that.products);case _:
+return addtoCart();case _:
   return null;
 
 }
@@ -504,71 +498,5 @@ String toString() {
 
 
 
-
-/// @nodoc
-
-
-class Selectedproducts implements CategoryEvent {
-  const Selectedproducts(this.products);
-  
-
- final  ProductDetailsArgs products;
-
-/// Create a copy of CategoryEvent
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$SelectedproductsCopyWith<Selectedproducts> get copyWith => _$SelectedproductsCopyWithImpl<Selectedproducts>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Selectedproducts&&(identical(other.products, products) || other.products == products));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,products);
-
-@override
-String toString() {
-  return 'CategoryEvent.selectedproducts(products: $products)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $SelectedproductsCopyWith<$Res> implements $CategoryEventCopyWith<$Res> {
-  factory $SelectedproductsCopyWith(Selectedproducts value, $Res Function(Selectedproducts) _then) = _$SelectedproductsCopyWithImpl;
-@useResult
-$Res call({
- ProductDetailsArgs products
-});
-
-
-
-
-}
-/// @nodoc
-class _$SelectedproductsCopyWithImpl<$Res>
-    implements $SelectedproductsCopyWith<$Res> {
-  _$SelectedproductsCopyWithImpl(this._self, this._then);
-
-  final Selectedproducts _self;
-  final $Res Function(Selectedproducts) _then;
-
-/// Create a copy of CategoryEvent
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? products = null,}) {
-  return _then(Selectedproducts(
-null == products ? _self.products : products // ignore: cast_nullable_to_non_nullable
-as ProductDetailsArgs,
-  ));
-}
-
-
-}
 
 // dart format on

@@ -55,14 +55,15 @@ extension CartEventPatterns on CartEvent {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( AddtoCart value)?  addtoCart,TResult Function( RemovefromCart value)?  removefromCart,TResult Function( ClearCart value)?  clearCart,TResult Function( DisplayCartProduct value)?  displayCartProduct,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( AddtoCart value)?  addtoCart,TResult Function( RemovefromCart value)?  removefromCart,TResult Function( ClearCart value)?  clearCart,TResult Function( DisplayCartProduct value)?  displayCartProduct,TResult Function( Selectedproducts value)?  selectedproducts,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case AddtoCart() when addtoCart != null:
 return addtoCart(_that);case RemovefromCart() when removefromCart != null:
 return removefromCart(_that);case ClearCart() when clearCart != null:
 return clearCart(_that);case DisplayCartProduct() when displayCartProduct != null:
-return displayCartProduct(_that);case _:
+return displayCartProduct(_that);case Selectedproducts() when selectedproducts != null:
+return selectedproducts(_that);case _:
   return orElse();
 
 }
@@ -80,14 +81,15 @@ return displayCartProduct(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( AddtoCart value)  addtoCart,required TResult Function( RemovefromCart value)  removefromCart,required TResult Function( ClearCart value)  clearCart,required TResult Function( DisplayCartProduct value)  displayCartProduct,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( AddtoCart value)  addtoCart,required TResult Function( RemovefromCart value)  removefromCart,required TResult Function( ClearCart value)  clearCart,required TResult Function( DisplayCartProduct value)  displayCartProduct,required TResult Function( Selectedproducts value)  selectedproducts,}){
 final _that = this;
 switch (_that) {
 case AddtoCart():
 return addtoCart(_that);case RemovefromCart():
 return removefromCart(_that);case ClearCart():
 return clearCart(_that);case DisplayCartProduct():
-return displayCartProduct(_that);case _:
+return displayCartProduct(_that);case Selectedproducts():
+return selectedproducts(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -104,14 +106,15 @@ return displayCartProduct(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( AddtoCart value)?  addtoCart,TResult? Function( RemovefromCart value)?  removefromCart,TResult? Function( ClearCart value)?  clearCart,TResult? Function( DisplayCartProduct value)?  displayCartProduct,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( AddtoCart value)?  addtoCart,TResult? Function( RemovefromCart value)?  removefromCart,TResult? Function( ClearCart value)?  clearCart,TResult? Function( DisplayCartProduct value)?  displayCartProduct,TResult? Function( Selectedproducts value)?  selectedproducts,}){
 final _that = this;
 switch (_that) {
 case AddtoCart() when addtoCart != null:
 return addtoCart(_that);case RemovefromCart() when removefromCart != null:
 return removefromCart(_that);case ClearCart() when clearCart != null:
 return clearCart(_that);case DisplayCartProduct() when displayCartProduct != null:
-return displayCartProduct(_that);case _:
+return displayCartProduct(_that);case Selectedproducts() when selectedproducts != null:
+return selectedproducts(_that);case _:
   return null;
 
 }
@@ -128,13 +131,14 @@ return displayCartProduct(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( PhoneModel product)?  addtoCart,TResult Function( PhoneModel product)?  removefromCart,TResult Function()?  clearCart,TResult Function()?  displayCartProduct,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( PhoneModel product)?  addtoCart,TResult Function( PhoneModel product)?  removefromCart,TResult Function()?  clearCart,TResult Function()?  displayCartProduct,TResult Function( ProductDetailsArgs products)?  selectedproducts,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case AddtoCart() when addtoCart != null:
 return addtoCart(_that.product);case RemovefromCart() when removefromCart != null:
 return removefromCart(_that.product);case ClearCart() when clearCart != null:
 return clearCart();case DisplayCartProduct() when displayCartProduct != null:
-return displayCartProduct();case _:
+return displayCartProduct();case Selectedproducts() when selectedproducts != null:
+return selectedproducts(_that.products);case _:
   return orElse();
 
 }
@@ -152,13 +156,14 @@ return displayCartProduct();case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( PhoneModel product)  addtoCart,required TResult Function( PhoneModel product)  removefromCart,required TResult Function()  clearCart,required TResult Function()  displayCartProduct,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( PhoneModel product)  addtoCart,required TResult Function( PhoneModel product)  removefromCart,required TResult Function()  clearCart,required TResult Function()  displayCartProduct,required TResult Function( ProductDetailsArgs products)  selectedproducts,}) {final _that = this;
 switch (_that) {
 case AddtoCart():
 return addtoCart(_that.product);case RemovefromCart():
 return removefromCart(_that.product);case ClearCart():
 return clearCart();case DisplayCartProduct():
-return displayCartProduct();case _:
+return displayCartProduct();case Selectedproducts():
+return selectedproducts(_that.products);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -175,13 +180,14 @@ return displayCartProduct();case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( PhoneModel product)?  addtoCart,TResult? Function( PhoneModel product)?  removefromCart,TResult? Function()?  clearCart,TResult? Function()?  displayCartProduct,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( PhoneModel product)?  addtoCart,TResult? Function( PhoneModel product)?  removefromCart,TResult? Function()?  clearCart,TResult? Function()?  displayCartProduct,TResult? Function( ProductDetailsArgs products)?  selectedproducts,}) {final _that = this;
 switch (_that) {
 case AddtoCart() when addtoCart != null:
 return addtoCart(_that.product);case RemovefromCart() when removefromCart != null:
 return removefromCart(_that.product);case ClearCart() when clearCart != null:
 return clearCart();case DisplayCartProduct() when displayCartProduct != null:
-return displayCartProduct();case _:
+return displayCartProduct();case Selectedproducts() when selectedproducts != null:
+return selectedproducts(_that.products);case _:
   return null;
 
 }
@@ -386,9 +392,75 @@ String toString() {
 
 
 /// @nodoc
+
+
+class Selectedproducts implements CartEvent {
+  const Selectedproducts(this.products);
+  
+
+ final  ProductDetailsArgs products;
+
+/// Create a copy of CartEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$SelectedproductsCopyWith<Selectedproducts> get copyWith => _$SelectedproductsCopyWithImpl<Selectedproducts>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Selectedproducts&&(identical(other.products, products) || other.products == products));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,products);
+
+@override
+String toString() {
+  return 'CartEvent.selectedproducts(products: $products)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $SelectedproductsCopyWith<$Res> implements $CartEventCopyWith<$Res> {
+  factory $SelectedproductsCopyWith(Selectedproducts value, $Res Function(Selectedproducts) _then) = _$SelectedproductsCopyWithImpl;
+@useResult
+$Res call({
+ ProductDetailsArgs products
+});
+
+
+
+
+}
+/// @nodoc
+class _$SelectedproductsCopyWithImpl<$Res>
+    implements $SelectedproductsCopyWith<$Res> {
+  _$SelectedproductsCopyWithImpl(this._self, this._then);
+
+  final Selectedproducts _self;
+  final $Res Function(Selectedproducts) _then;
+
+/// Create a copy of CartEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? products = null,}) {
+  return _then(Selectedproducts(
+null == products ? _self.products : products // ignore: cast_nullable_to_non_nullable
+as ProductDetailsArgs,
+  ));
+}
+
+
+}
+
+/// @nodoc
 mixin _$CartState {
 
- List<PhoneModel> get cartItems; double get totalPrice; bool get isLoading; String? get errorMessage; String? get StatusMessage;
+ List<PhoneModel> get cartItems; double get totalPrice; bool get isLoading; String? get errorMessage; String? get StatusMessage; ProductDetailsArgs? get selecteddetails;
 /// Create a copy of CartState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -399,16 +471,16 @@ $CartStateCopyWith<CartState> get copyWith => _$CartStateCopyWithImpl<CartState>
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is CartState&&const DeepCollectionEquality().equals(other.cartItems, cartItems)&&(identical(other.totalPrice, totalPrice) || other.totalPrice == totalPrice)&&(identical(other.isLoading, isLoading) || other.isLoading == isLoading)&&(identical(other.errorMessage, errorMessage) || other.errorMessage == errorMessage)&&(identical(other.StatusMessage, StatusMessage) || other.StatusMessage == StatusMessage));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CartState&&const DeepCollectionEquality().equals(other.cartItems, cartItems)&&(identical(other.totalPrice, totalPrice) || other.totalPrice == totalPrice)&&(identical(other.isLoading, isLoading) || other.isLoading == isLoading)&&(identical(other.errorMessage, errorMessage) || other.errorMessage == errorMessage)&&(identical(other.StatusMessage, StatusMessage) || other.StatusMessage == StatusMessage)&&(identical(other.selecteddetails, selecteddetails) || other.selecteddetails == selecteddetails));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(cartItems),totalPrice,isLoading,errorMessage,StatusMessage);
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(cartItems),totalPrice,isLoading,errorMessage,StatusMessage,selecteddetails);
 
 @override
 String toString() {
-  return 'CartState(cartItems: $cartItems, totalPrice: $totalPrice, isLoading: $isLoading, errorMessage: $errorMessage, StatusMessage: $StatusMessage)';
+  return 'CartState(cartItems: $cartItems, totalPrice: $totalPrice, isLoading: $isLoading, errorMessage: $errorMessage, StatusMessage: $StatusMessage, selecteddetails: $selecteddetails)';
 }
 
 
@@ -419,7 +491,7 @@ abstract mixin class $CartStateCopyWith<$Res>  {
   factory $CartStateCopyWith(CartState value, $Res Function(CartState) _then) = _$CartStateCopyWithImpl;
 @useResult
 $Res call({
- List<PhoneModel> cartItems, double totalPrice, bool isLoading, String? errorMessage, String? StatusMessage
+ List<PhoneModel> cartItems, double totalPrice, bool isLoading, String? errorMessage, String? StatusMessage, ProductDetailsArgs? selecteddetails
 });
 
 
@@ -436,14 +508,15 @@ class _$CartStateCopyWithImpl<$Res>
 
 /// Create a copy of CartState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? cartItems = null,Object? totalPrice = null,Object? isLoading = null,Object? errorMessage = freezed,Object? StatusMessage = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? cartItems = null,Object? totalPrice = null,Object? isLoading = null,Object? errorMessage = freezed,Object? StatusMessage = freezed,Object? selecteddetails = freezed,}) {
   return _then(_self.copyWith(
 cartItems: null == cartItems ? _self.cartItems : cartItems // ignore: cast_nullable_to_non_nullable
 as List<PhoneModel>,totalPrice: null == totalPrice ? _self.totalPrice : totalPrice // ignore: cast_nullable_to_non_nullable
 as double,isLoading: null == isLoading ? _self.isLoading : isLoading // ignore: cast_nullable_to_non_nullable
 as bool,errorMessage: freezed == errorMessage ? _self.errorMessage : errorMessage // ignore: cast_nullable_to_non_nullable
 as String?,StatusMessage: freezed == StatusMessage ? _self.StatusMessage : StatusMessage // ignore: cast_nullable_to_non_nullable
-as String?,
+as String?,selecteddetails: freezed == selecteddetails ? _self.selecteddetails : selecteddetails // ignore: cast_nullable_to_non_nullable
+as ProductDetailsArgs?,
   ));
 }
 
@@ -528,10 +601,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<PhoneModel> cartItems,  double totalPrice,  bool isLoading,  String? errorMessage,  String? StatusMessage)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<PhoneModel> cartItems,  double totalPrice,  bool isLoading,  String? errorMessage,  String? StatusMessage,  ProductDetailsArgs? selecteddetails)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case CartStateData() when $default != null:
-return $default(_that.cartItems,_that.totalPrice,_that.isLoading,_that.errorMessage,_that.StatusMessage);case _:
+return $default(_that.cartItems,_that.totalPrice,_that.isLoading,_that.errorMessage,_that.StatusMessage,_that.selecteddetails);case _:
   return orElse();
 
 }
@@ -549,10 +622,10 @@ return $default(_that.cartItems,_that.totalPrice,_that.isLoading,_that.errorMess
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<PhoneModel> cartItems,  double totalPrice,  bool isLoading,  String? errorMessage,  String? StatusMessage)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<PhoneModel> cartItems,  double totalPrice,  bool isLoading,  String? errorMessage,  String? StatusMessage,  ProductDetailsArgs? selecteddetails)  $default,) {final _that = this;
 switch (_that) {
 case CartStateData():
-return $default(_that.cartItems,_that.totalPrice,_that.isLoading,_that.errorMessage,_that.StatusMessage);case _:
+return $default(_that.cartItems,_that.totalPrice,_that.isLoading,_that.errorMessage,_that.StatusMessage,_that.selecteddetails);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -569,10 +642,10 @@ return $default(_that.cartItems,_that.totalPrice,_that.isLoading,_that.errorMess
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<PhoneModel> cartItems,  double totalPrice,  bool isLoading,  String? errorMessage,  String? StatusMessage)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<PhoneModel> cartItems,  double totalPrice,  bool isLoading,  String? errorMessage,  String? StatusMessage,  ProductDetailsArgs? selecteddetails)?  $default,) {final _that = this;
 switch (_that) {
 case CartStateData() when $default != null:
-return $default(_that.cartItems,_that.totalPrice,_that.isLoading,_that.errorMessage,_that.StatusMessage);case _:
+return $default(_that.cartItems,_that.totalPrice,_that.isLoading,_that.errorMessage,_that.StatusMessage,_that.selecteddetails);case _:
   return null;
 
 }
@@ -584,7 +657,7 @@ return $default(_that.cartItems,_that.totalPrice,_that.isLoading,_that.errorMess
 
 
 class CartStateData implements CartState {
-  const CartStateData({required final  List<PhoneModel> cartItems, required this.totalPrice, required this.isLoading, required this.errorMessage, required this.StatusMessage}): _cartItems = cartItems;
+  const CartStateData({required final  List<PhoneModel> cartItems, required this.totalPrice, required this.isLoading, required this.errorMessage, required this.StatusMessage, required this.selecteddetails}): _cartItems = cartItems;
   
 
  final  List<PhoneModel> _cartItems;
@@ -598,6 +671,7 @@ class CartStateData implements CartState {
 @override final  bool isLoading;
 @override final  String? errorMessage;
 @override final  String? StatusMessage;
+@override final  ProductDetailsArgs? selecteddetails;
 
 /// Create a copy of CartState
 /// with the given fields replaced by the non-null parameter values.
@@ -609,16 +683,16 @@ $CartStateDataCopyWith<CartStateData> get copyWith => _$CartStateDataCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is CartStateData&&const DeepCollectionEquality().equals(other._cartItems, _cartItems)&&(identical(other.totalPrice, totalPrice) || other.totalPrice == totalPrice)&&(identical(other.isLoading, isLoading) || other.isLoading == isLoading)&&(identical(other.errorMessage, errorMessage) || other.errorMessage == errorMessage)&&(identical(other.StatusMessage, StatusMessage) || other.StatusMessage == StatusMessage));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CartStateData&&const DeepCollectionEquality().equals(other._cartItems, _cartItems)&&(identical(other.totalPrice, totalPrice) || other.totalPrice == totalPrice)&&(identical(other.isLoading, isLoading) || other.isLoading == isLoading)&&(identical(other.errorMessage, errorMessage) || other.errorMessage == errorMessage)&&(identical(other.StatusMessage, StatusMessage) || other.StatusMessage == StatusMessage)&&(identical(other.selecteddetails, selecteddetails) || other.selecteddetails == selecteddetails));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_cartItems),totalPrice,isLoading,errorMessage,StatusMessage);
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_cartItems),totalPrice,isLoading,errorMessage,StatusMessage,selecteddetails);
 
 @override
 String toString() {
-  return 'CartState(cartItems: $cartItems, totalPrice: $totalPrice, isLoading: $isLoading, errorMessage: $errorMessage, StatusMessage: $StatusMessage)';
+  return 'CartState(cartItems: $cartItems, totalPrice: $totalPrice, isLoading: $isLoading, errorMessage: $errorMessage, StatusMessage: $StatusMessage, selecteddetails: $selecteddetails)';
 }
 
 
@@ -629,7 +703,7 @@ abstract mixin class $CartStateDataCopyWith<$Res> implements $CartStateCopyWith<
   factory $CartStateDataCopyWith(CartStateData value, $Res Function(CartStateData) _then) = _$CartStateDataCopyWithImpl;
 @override @useResult
 $Res call({
- List<PhoneModel> cartItems, double totalPrice, bool isLoading, String? errorMessage, String? StatusMessage
+ List<PhoneModel> cartItems, double totalPrice, bool isLoading, String? errorMessage, String? StatusMessage, ProductDetailsArgs? selecteddetails
 });
 
 
@@ -646,14 +720,15 @@ class _$CartStateDataCopyWithImpl<$Res>
 
 /// Create a copy of CartState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? cartItems = null,Object? totalPrice = null,Object? isLoading = null,Object? errorMessage = freezed,Object? StatusMessage = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? cartItems = null,Object? totalPrice = null,Object? isLoading = null,Object? errorMessage = freezed,Object? StatusMessage = freezed,Object? selecteddetails = freezed,}) {
   return _then(CartStateData(
 cartItems: null == cartItems ? _self._cartItems : cartItems // ignore: cast_nullable_to_non_nullable
 as List<PhoneModel>,totalPrice: null == totalPrice ? _self.totalPrice : totalPrice // ignore: cast_nullable_to_non_nullable
 as double,isLoading: null == isLoading ? _self.isLoading : isLoading // ignore: cast_nullable_to_non_nullable
 as bool,errorMessage: freezed == errorMessage ? _self.errorMessage : errorMessage // ignore: cast_nullable_to_non_nullable
 as String?,StatusMessage: freezed == StatusMessage ? _self.StatusMessage : StatusMessage // ignore: cast_nullable_to_non_nullable
-as String?,
+as String?,selecteddetails: freezed == selecteddetails ? _self.selecteddetails : selecteddetails // ignore: cast_nullable_to_non_nullable
+as ProductDetailsArgs?,
   ));
 }
 

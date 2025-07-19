@@ -15,6 +15,5 @@ class CategoryEvent with _$CategoryEvent {
    const factory CategoryEvent.navigateToProductdetails(PhoneModel product) = NavigateToProductdetails;
    const factory CategoryEvent.getAllProducts() = GetAllProducts;
    const factory CategoryEvent.addtoCart() = AddtoCart;
-   const factory CategoryEvent.selectedproducts(ProductDetailsArgs products)= Selectedproducts;
 }
 

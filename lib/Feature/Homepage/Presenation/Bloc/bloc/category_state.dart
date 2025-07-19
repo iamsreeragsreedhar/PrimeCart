@@ -18,7 +18,7 @@ abstract class CategoryState with _$CategoryState {
     required String? errorMessage,
     required PhoneModel? selectedProduct,
     required PhoneModel? selectedProductdetails,
-    required ProductDetailsArgs? selecteddetails,
+    
   }) = CategoryStateData;
 
   factory CategoryState.initial() => CategoryState(selectedProduct: null,
@@ -29,7 +29,6 @@ abstract class CategoryState with _$CategoryState {
     PhoneList: [],
     isLoading: false,
     errorMessage: null,
-    selecteddetails:null
    
   );
   
