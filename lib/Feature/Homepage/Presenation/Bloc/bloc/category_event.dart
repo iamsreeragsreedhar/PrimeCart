@@ -1,5 +1,6 @@
 
 import 'package:flutter_website_task/Feature/Homepage/Data/Category/Categorymodel.dart';
+import 'package:flutter_website_task/Feature/ProductDetails/Presentation/Data/Model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'category_event.freezed.dart';
 
@@ -14,5 +15,6 @@ class CategoryEvent with _$CategoryEvent {
    const factory CategoryEvent.navigateToProductdetails(PhoneModel product) = NavigateToProductdetails;
    const factory CategoryEvent.getAllProducts() = GetAllProducts;
    const factory CategoryEvent.addtoCart() = AddtoCart;
+   const factory CategoryEvent.selectedproducts(ProductDetailsArgs products)= Selectedproducts;
 }
 

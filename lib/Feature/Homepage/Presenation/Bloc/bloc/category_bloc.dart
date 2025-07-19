@@ -17,6 +17,7 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
     on<NavigateToDetails>(_NavigateToDetails);
     on<NavigateToProductdetails>(_onNavigateToProductdetails);
     on<GetAllProducts>(_onGetAllProducts);
+    on<Selectedproducts>(_onGetdetailsProducts);
   }
   Future<void> _onFetchCategories(
     FetchCategories event,
@@ -108,5 +109,10 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
     } catch (e) {
       emit(state.copyWith(isLoading: false, errorMessage: e.toString()));
     }
+  }
+
+
+  Future<void>_onGetdetailsProducts(Selectedproducts event,Emitter<CategoryState> emit,)async{
+    emit(state.copyWith(selecteddetails:event.products));
   }
 }

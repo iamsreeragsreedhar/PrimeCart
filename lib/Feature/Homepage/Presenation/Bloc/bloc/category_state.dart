@@ -1,6 +1,7 @@
 
 
 import 'package:flutter_website_task/Feature/Homepage/Data/Category/Categorymodel.dart';
+import 'package:flutter_website_task/Feature/ProductDetails/Presentation/Data/Model.dart';
 import 'package:flutter_website_task/test.dart' hide Product;
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'category_state.freezed.dart';
@@ -17,6 +18,7 @@ abstract class CategoryState with _$CategoryState {
     required String? errorMessage,
     required PhoneModel? selectedProduct,
     required PhoneModel? selectedProductdetails,
+    required ProductDetailsArgs? selecteddetails,
   }) = CategoryStateData;
 
   factory CategoryState.initial() => CategoryState(selectedProduct: null,
@@ -27,6 +29,8 @@ abstract class CategoryState with _$CategoryState {
     PhoneList: [],
     isLoading: false,
     errorMessage: null,
+    selecteddetails:null
+   
   );
   
   

@@ -11,29 +11,10 @@ import 'package:flutter_website_task/Feature/ProductDetails/Presentation/Screens
 import 'package:flutter_website_task/Feature/ProductDetails/Presentation/Screens/ProductCart.dart';
 import 'package:go_router/go_router.dart';
 
-
 class ProductDetails extends StatefulWidget {
   final ProductDetailsArgs product;
-  // final String productName;
-  // final List<String> productImage;
-  // final double productPrice;
-  // final double DiscountPrice;
-  // final String productdescription;
-  // final double rating;
-  // final String warranty;
-  // final String Shipping;
 
-  const ProductDetails({
-    super.key, required this.product,
-    // required this.productName,
-    // required this.productImage,
-    // required this.productPrice,
-    // required this.DiscountPrice,
-    // required this.productdescription,
-    // required this.rating,
-    // required this.warranty,
-    // required this.Shipping,
-  });
+  const ProductDetails({super.key, required this.product});
 
   @override
   State<ProductDetails> createState() => _ProductDetailsState();
@@ -57,7 +38,6 @@ class _ProductDetailsState extends State<ProductDetails> {
       },
       builder: (context, state) {
         return Scaffold(
-          
           body: SafeArea(
             child: Padding(
               padding: EdgeInsets.all(16.w),
@@ -73,9 +53,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                           MaterialPageRoute(builder: (context) => CartPage()),
                         );
                       },
-                      onSellerTap: () {
-                      
-                      },
+                      onSellerTap: () {},
                     ),
                     Row(
                       children: [
@@ -224,7 +202,8 @@ class _ProductDetailsState extends State<ProductDetails> {
                                   final product = PhoneModel(
                                     id: 0,
                                     title: widget.product.productName,
-                                    description: widget.product.productdescription,
+                                    description:
+                                        widget.product.productdescription,
                                     category: "",
                                     price: widget.product.productPrice,
                                     discountPercentage: 0.0,
@@ -234,8 +213,10 @@ class _ProductDetailsState extends State<ProductDetails> {
                                     brand: "",
                                     sku: "",
                                     weight: 0,
-                                    warrantyInformation: widget.product.warranty,
-                                    shippingInformation: widget.product.Shipping,
+                                    warrantyInformation:
+                                        widget.product.warranty,
+                                    shippingInformation:
+                                        widget.product.Shipping,
                                     availabilityStatus: "",
                                     returnPolicy: "",
                                     minimumOrderQuantity: 0,
@@ -247,11 +228,14 @@ class _ProductDetailsState extends State<ProductDetails> {
                                   ).add(AddtoCart(product));
                                 },
                                 onBuyNow: () {
-         
-
-                        context.push('/Checkout',extra: CheckoutModel(productName: widget.product.productName,
-                        productPrice: widget.product.productPrice,
-                        thumbnail: widget.product.productImage));
+                                  context.push(
+                                    '/Checkout',
+                                    extra: CheckoutModel(
+                                      productName: widget.product.productName,
+                                      productPrice: widget.product.productPrice,
+                                      thumbnail: widget.product.productImage,
+                                    ),
+                                  );
                                 },
                               ),
                               SizedBox(height: 20.h),

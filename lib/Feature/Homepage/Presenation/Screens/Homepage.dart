@@ -185,20 +185,18 @@ class _HeaderPartState extends State<Homepage> {
           // );
 
 
-
+context.read<CategoryBloc>().add(Selectedproducts(ProductDetailsArgs(productImage:state.PhoneList[index].images,
+productName: state.PhoneList[index].title,
+DiscountPrice:  state.PhoneList[index].discountPercentage,
+Shipping: state.PhoneList[index].shippingInformation,
+productPrice: state.PhoneList[index].price,
+productdescription: state.PhoneList[index].description,
+rating: state.PhoneList[index].rating,
+warranty: state.PhoneList[index].warrantyInformation
+ )));
 
           context.push(
   '/productDetails',
-  extra: ProductDetailsArgs(
-    productImage: state.PhoneList[index].images,
-    productName: state.PhoneList[index].title,
-    productPrice: state.PhoneList[index].price,
-    DiscountPrice: state.PhoneList[index].discountPercentage,
-    productdescription: state.PhoneList[index].description,
-    rating: state.PhoneList[index].rating,
-    Shipping: state.PhoneList[index].shippingInformation,
-    warranty: state.PhoneList[index].warrantyInformation,
-  ),
 );
                       },
                     ),
