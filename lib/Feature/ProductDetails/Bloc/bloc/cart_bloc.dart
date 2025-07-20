@@ -81,6 +81,6 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     Emitter<CartState> emit,
   ) async {
     emit(state.copyWith(SelectCheckoutdetails: event.prod));
-    print("checkout details: ${state.SelectCheckoutdetails}");
+    
   }
 }

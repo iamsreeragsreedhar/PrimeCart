@@ -33,7 +33,9 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                 CommonHeader(
                   onLoginTap: () {},
                   onSellerTap: () {},
-                  onCartTap: () {},
+                  onCartTap: () {
+                    context.push('/productCart');
+                  },
                 ),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -437,7 +439,7 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                                   ),
                                 ),
                                 Text(
-                                  '+ ₹{state.DataVar}',
+                                  '+ ₹${state.DataVar}',
                                   style: TextStyle(
                                     fontSize: 14.sp,
                                     color: Colors.black,

@@ -30,11 +30,11 @@ class _ProductDetailsState extends State<ProductDetails> {
   Widget build(BuildContext context) {
     return BlocConsumer<CartBloc, CartState>(
       listener: (context, state) {
-        if (state.StatusMessage!.isNotEmpty) {
-          ScaffoldMessenger.of(
-            context,
-          ).showSnackBar(SnackBar(content: Text(state.StatusMessage!)));
-        }
+        // if (state.StatusMessage!.isNotEmpty) {
+        //   ScaffoldMessenger.of(
+        //     context,
+        //   ).showSnackBar(SnackBar(content: Text(state.StatusMessage!)));
+        // }
       },
       builder: (context, state) {
         return Scaffold(
@@ -48,10 +48,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                     CommonHeader(
                       onLoginTap: () {},
                       onCartTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => CartPage()),
-                        );
+                         context.push('/productCart');
                       },
                       onSellerTap: () {},
                     ),
@@ -227,15 +224,27 @@ class _ProductDetailsState extends State<ProductDetails> {
                                   ).add(AddtoCart(product));
                                 },
                                 onBuyNow: () {
+                                  print( "state.selecteddetails!.productPrice: ${state.selecteddetails!.productPrice} ");  
+                                  
+                                  // context.read<CartBloc>().add(
+                                  //   PlacedorderedProduct(
+                                  //     state.selecteddetails!.productPrice,
+                                  //   ),
+                                  // );
+
                                   context.read<CartBloc>().add(
-                                    PlacedorderedProduct(
-                                      state.selecteddetails!.productPrice,
+                                    CheckOutProductDetail(
+                                      CheckoutModel(
+                                        productName: state.selecteddetails!.productName,
+                                        productPrice: state.selecteddetails!.productPrice,
+                                        thumbnail: state.selecteddetails!.productImage,
+                                      ),
                                     ),
                                   );
                                   context.push(
-                                    '/Checkout',
-                                    
+                                    '/Checkout', 
                                   );
+                                  
                                 },
                               ),
                               SizedBox(height: 20.h),

@@ -54,10 +54,7 @@ class _HeaderPartState extends State<Homepage> {
                   CommonHeader(
                     onLoginTap: () {},
                     onCartTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => CartPage()),
-                      );
+                    context.push('/productCart');
                     },
                     onSellerTap: () {},
                   ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_website_task/Core/Utils/HeaderPart.dart';
 import 'package:flutter_website_task/Core/Utils/Widgets.dart';
@@ -32,7 +34,9 @@ class _CartPageState extends State<CartPage> {
             children: [
               CommonHeader(
                 onLoginTap: () {},
-                onCartTap: () {},
+                onCartTap: () {
+                    context.push('/productCart');
+                },
                 onSellerTap: () {},
               ),
                 (state.cartItems.isEmpty)

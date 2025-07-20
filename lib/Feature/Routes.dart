@@ -6,6 +6,7 @@ import 'package:flutter_website_task/Feature/ProductDetails/Bloc/bloc/cart_bloc.
 import 'package:flutter_website_task/Feature/ProductDetails/Presentation/Data/Model.dart';
 import 'package:flutter_website_task/Feature/ProductDetails/Presentation/Screens/CheckoutPage.dart';
 import 'package:flutter_website_task/Feature/ProductDetails/Presentation/Screens/PlaceOrder.dart';
+import 'package:flutter_website_task/Feature/ProductDetails/Presentation/Screens/ProductCart.dart';
 import 'package:flutter_website_task/Feature/ProductDetails/Presentation/Screens/ProductDetails.dart';
 import 'package:flutter_website_task/Feature/Register/Register.dart';
 import 'package:flutter_website_task/test.dart';
@@ -65,6 +66,10 @@ GoRoute(
     return PaymentMethodPage();
   },
 ),
+GoRoute(
+      path: '/productCart',
+      builder: (context, state) => CartPage(),
+    ),
 
 
 
