@@ -12,9 +12,9 @@ import 'package:flutter_website_task/Feature/ProductDetails/Presentation/Screens
 import 'package:go_router/go_router.dart';
 
 class ProductDetails extends StatefulWidget {
-  final ProductDetailsArgs product;
+  
 
-  const ProductDetails({super.key, required this.product});
+  const ProductDetails({super.key});
 
   @override
   State<ProductDetails> createState() => _ProductDetailsState();
@@ -66,7 +66,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                 border: Border.all(color: Colors.grey.shade300),
                               ),
                               child: Image.network(
-                                widget.product.productImage[0],
+                                state.selecteddetails!.productImage[0],
                                 fit: BoxFit.contain,
                               ),
                             ),
@@ -76,7 +76,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                               height: 60.h,
                               child: ListView.builder(
                                 scrollDirection: Axis.horizontal,
-                                itemCount: widget.product.productImage.length,
+                                itemCount: state.selecteddetails!.productImage.length,
                                 itemBuilder: (_, index) => Padding(
                                   padding: EdgeInsets.symmetric(
                                     horizontal: 4.w,
@@ -98,7 +98,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                widget.product.productName,
+                                state.selecteddetails!.productName,
                                 style: TextStyle(
                                   fontSize: 18.sp,
                                   fontWeight: FontWeight.w600,
@@ -117,7 +117,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                       borderRadius: BorderRadius.circular(4.r),
                                     ),
                                     child: Text(
-                                      "${widget.product.rating} ★",
+                                      "${state.selecteddetails!.rating} ★",
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 14.sp,
@@ -136,7 +136,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                               ),
                               SizedBox(height: 8.h),
                               Text(
-                                "₹${widget.product.productPrice}",
+                                "₹${state.selecteddetails!.productPrice}",
                                 style: TextStyle(
                                   fontSize: 24.sp,
                                   fontWeight: FontWeight.bold,
@@ -154,7 +154,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                   ),
                                   SizedBox(width: 10.w),
                                   Text(
-                                    "${widget.product.DiscountPrice}% off",
+                                    "${state.selecteddetails!.DiscountPrice}% off",
                                     style: TextStyle(
                                       color: Colors.green,
                                       fontSize: 16.sp,
@@ -173,7 +173,6 @@ class _ProductDetailsState extends State<ProductDetails> {
                               ),
                               SizedBox(height: 10.h),
 
-                              /// Offers
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -201,11 +200,11 @@ class _ProductDetailsState extends State<ProductDetails> {
                                 onAddToCart: () {
                                   final product = PhoneModel(
                                     id: 0,
-                                    title: widget.product.productName,
+                                    title: state.selecteddetails!.productName,
                                     description:
-                                        widget.product.productdescription,
+                                        state.selecteddetails!.productdescription,
                                     category: "",
-                                    price: widget.product.productPrice,
+                                    price: state.selecteddetails!.productPrice,
                                     discountPercentage: 0.0,
                                     rating: 0.0,
                                     stock: 0,
@@ -214,13 +213,13 @@ class _ProductDetailsState extends State<ProductDetails> {
                                     sku: "",
                                     weight: 0,
                                     warrantyInformation:
-                                        widget.product.warranty,
+                                        state.selecteddetails!.warranty,
                                     shippingInformation:
-                                        widget.product.Shipping,
+                                        state.selecteddetails!.Shipping,
                                     availabilityStatus: "",
                                     returnPolicy: "",
                                     minimumOrderQuantity: 0,
-                                    images: widget.product.productImage,
+                                    images: state.selecteddetails!.productImage,
                                     thumbnail: "",
                                   );
                                   BlocProvider.of<CartBloc>(
@@ -228,13 +227,14 @@ class _ProductDetailsState extends State<ProductDetails> {
                                   ).add(AddtoCart(product));
                                 },
                                 onBuyNow: () {
+                                  context.read<CartBloc>().add(
+                                    PlacedorderedProduct(
+                                      state.selecteddetails!.productPrice,
+                                    ),
+                                  );
                                   context.push(
                                     '/Checkout',
-                                    extra: CheckoutModel(
-                                      productName: widget.product.productName,
-                                      productPrice: widget.product.productPrice,
-                                      thumbnail: widget.product.productImage,
-                                    ),
+                                    
                                   );
                                 },
                               ),
@@ -242,14 +242,14 @@ class _ProductDetailsState extends State<ProductDetails> {
                               HeadingText("Product Description", 20.sp),
                               SizedBox(height: 10.h),
                               ProductdetailText(
-                                widget.product.productName,
+                                state.selecteddetails!.productName,
                                 16,
                                 FontWeight.normal,
                                 Colors.grey[800],
                               ),
                               SizedBox(height: 10.h),
                               ProductdetailText(
-                                widget.product.productdescription,
+                                state.selecteddetails!.productdescription,
                                 16,
                                 FontWeight.normal,
                                 Colors.grey[800],
@@ -258,7 +258,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                               HeadingText("Warranty Information", 20.sp),
                               SizedBox(height: 10.h),
                               ProductdetailText(
-                                widget.product.warranty,
+                                state.selecteddetails!.warranty,
                                 16,
                                 FontWeight.normal,
                                 Colors.grey[800],
@@ -267,7 +267,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                               HeadingText("Shipping Information", 20.sp),
                               SizedBox(height: 10.h),
                               ProductdetailText(
-                                widget.product.Shipping,
+                                state.selecteddetails!.Shipping,
                                 16,
                                 FontWeight.normal,
                                 Colors.grey[800],

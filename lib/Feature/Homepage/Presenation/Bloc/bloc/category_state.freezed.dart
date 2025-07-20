@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$CategoryState {
 
- List<Category> get categories; List<ProductModel> get products; List<PhoneModel> get Featuredproducts; List<PhoneModel> get PhoneList; bool get isLoading; String? get errorMessage; PhoneModel? get selectedProduct; PhoneModel? get selectedProductdetails; ProductDetailsArgs? get selecteddetails;
+ List<Category> get categories; List<ProductModel> get products; List<PhoneModel> get Featuredproducts; List<PhoneModel> get PhoneList; bool get isLoading; String? get errorMessage; PhoneModel? get selectedProduct; PhoneModel? get selectedProductdetails;
 /// Create a copy of CategoryState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -25,16 +25,16 @@ $CategoryStateCopyWith<CategoryState> get copyWith => _$CategoryStateCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is CategoryState&&const DeepCollectionEquality().equals(other.categories, categories)&&const DeepCollectionEquality().equals(other.products, products)&&const DeepCollectionEquality().equals(other.Featuredproducts, Featuredproducts)&&const DeepCollectionEquality().equals(other.PhoneList, PhoneList)&&(identical(other.isLoading, isLoading) || other.isLoading == isLoading)&&(identical(other.errorMessage, errorMessage) || other.errorMessage == errorMessage)&&(identical(other.selectedProduct, selectedProduct) || other.selectedProduct == selectedProduct)&&(identical(other.selectedProductdetails, selectedProductdetails) || other.selectedProductdetails == selectedProductdetails)&&(identical(other.selecteddetails, selecteddetails) || other.selecteddetails == selecteddetails));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CategoryState&&const DeepCollectionEquality().equals(other.categories, categories)&&const DeepCollectionEquality().equals(other.products, products)&&const DeepCollectionEquality().equals(other.Featuredproducts, Featuredproducts)&&const DeepCollectionEquality().equals(other.PhoneList, PhoneList)&&(identical(other.isLoading, isLoading) || other.isLoading == isLoading)&&(identical(other.errorMessage, errorMessage) || other.errorMessage == errorMessage)&&(identical(other.selectedProduct, selectedProduct) || other.selectedProduct == selectedProduct)&&(identical(other.selectedProductdetails, selectedProductdetails) || other.selectedProductdetails == selectedProductdetails));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(categories),const DeepCollectionEquality().hash(products),const DeepCollectionEquality().hash(Featuredproducts),const DeepCollectionEquality().hash(PhoneList),isLoading,errorMessage,selectedProduct,selectedProductdetails,selecteddetails);
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(categories),const DeepCollectionEquality().hash(products),const DeepCollectionEquality().hash(Featuredproducts),const DeepCollectionEquality().hash(PhoneList),isLoading,errorMessage,selectedProduct,selectedProductdetails);
 
 @override
 String toString() {
-  return 'CategoryState(categories: $categories, products: $products, Featuredproducts: $Featuredproducts, PhoneList: $PhoneList, isLoading: $isLoading, errorMessage: $errorMessage, selectedProduct: $selectedProduct, selectedProductdetails: $selectedProductdetails, selecteddetails: $selecteddetails)';
+  return 'CategoryState(categories: $categories, products: $products, Featuredproducts: $Featuredproducts, PhoneList: $PhoneList, isLoading: $isLoading, errorMessage: $errorMessage, selectedProduct: $selectedProduct, selectedProductdetails: $selectedProductdetails)';
 }
 
 
@@ -45,7 +45,7 @@ abstract mixin class $CategoryStateCopyWith<$Res>  {
   factory $CategoryStateCopyWith(CategoryState value, $Res Function(CategoryState) _then) = _$CategoryStateCopyWithImpl;
 @useResult
 $Res call({
- List<Category> categories, List<ProductModel> products, List<PhoneModel> Featuredproducts, List<PhoneModel> PhoneList, bool isLoading, String? errorMessage, PhoneModel? selectedProduct, PhoneModel? selectedProductdetails, ProductDetailsArgs? selecteddetails
+ List<Category> categories, List<ProductModel> products, List<PhoneModel> Featuredproducts, List<PhoneModel> PhoneList, bool isLoading, String? errorMessage, PhoneModel? selectedProduct, PhoneModel? selectedProductdetails
 });
 
 
@@ -62,7 +62,7 @@ class _$CategoryStateCopyWithImpl<$Res>
 
 /// Create a copy of CategoryState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? categories = null,Object? products = null,Object? Featuredproducts = null,Object? PhoneList = null,Object? isLoading = null,Object? errorMessage = freezed,Object? selectedProduct = freezed,Object? selectedProductdetails = freezed,Object? selecteddetails = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? categories = null,Object? products = null,Object? Featuredproducts = null,Object? PhoneList = null,Object? isLoading = null,Object? errorMessage = freezed,Object? selectedProduct = freezed,Object? selectedProductdetails = freezed,}) {
   return _then(_self.copyWith(
 categories: null == categories ? _self.categories : categories // ignore: cast_nullable_to_non_nullable
 as List<Category>,products: null == products ? _self.products : products // ignore: cast_nullable_to_non_nullable
@@ -72,8 +72,7 @@ as List<PhoneModel>,isLoading: null == isLoading ? _self.isLoading : isLoading /
 as bool,errorMessage: freezed == errorMessage ? _self.errorMessage : errorMessage // ignore: cast_nullable_to_non_nullable
 as String?,selectedProduct: freezed == selectedProduct ? _self.selectedProduct : selectedProduct // ignore: cast_nullable_to_non_nullable
 as PhoneModel?,selectedProductdetails: freezed == selectedProductdetails ? _self.selectedProductdetails : selectedProductdetails // ignore: cast_nullable_to_non_nullable
-as PhoneModel?,selecteddetails: freezed == selecteddetails ? _self.selecteddetails : selecteddetails // ignore: cast_nullable_to_non_nullable
-as ProductDetailsArgs?,
+as PhoneModel?,
   ));
 }
 
@@ -158,10 +157,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<Category> categories,  List<ProductModel> products,  List<PhoneModel> Featuredproducts,  List<PhoneModel> PhoneList,  bool isLoading,  String? errorMessage,  PhoneModel? selectedProduct,  PhoneModel? selectedProductdetails,  ProductDetailsArgs? selecteddetails)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<Category> categories,  List<ProductModel> products,  List<PhoneModel> Featuredproducts,  List<PhoneModel> PhoneList,  bool isLoading,  String? errorMessage,  PhoneModel? selectedProduct,  PhoneModel? selectedProductdetails)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case CategoryStateData() when $default != null:
-return $default(_that.categories,_that.products,_that.Featuredproducts,_that.PhoneList,_that.isLoading,_that.errorMessage,_that.selectedProduct,_that.selectedProductdetails,_that.selecteddetails);case _:
+return $default(_that.categories,_that.products,_that.Featuredproducts,_that.PhoneList,_that.isLoading,_that.errorMessage,_that.selectedProduct,_that.selectedProductdetails);case _:
   return orElse();
 
 }
@@ -179,10 +178,10 @@ return $default(_that.categories,_that.products,_that.Featuredproducts,_that.Pho
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<Category> categories,  List<ProductModel> products,  List<PhoneModel> Featuredproducts,  List<PhoneModel> PhoneList,  bool isLoading,  String? errorMessage,  PhoneModel? selectedProduct,  PhoneModel? selectedProductdetails,  ProductDetailsArgs? selecteddetails)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<Category> categories,  List<ProductModel> products,  List<PhoneModel> Featuredproducts,  List<PhoneModel> PhoneList,  bool isLoading,  String? errorMessage,  PhoneModel? selectedProduct,  PhoneModel? selectedProductdetails)  $default,) {final _that = this;
 switch (_that) {
 case CategoryStateData():
-return $default(_that.categories,_that.products,_that.Featuredproducts,_that.PhoneList,_that.isLoading,_that.errorMessage,_that.selectedProduct,_that.selectedProductdetails,_that.selecteddetails);case _:
+return $default(_that.categories,_that.products,_that.Featuredproducts,_that.PhoneList,_that.isLoading,_that.errorMessage,_that.selectedProduct,_that.selectedProductdetails);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -199,10 +198,10 @@ return $default(_that.categories,_that.products,_that.Featuredproducts,_that.Pho
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<Category> categories,  List<ProductModel> products,  List<PhoneModel> Featuredproducts,  List<PhoneModel> PhoneList,  bool isLoading,  String? errorMessage,  PhoneModel? selectedProduct,  PhoneModel? selectedProductdetails,  ProductDetailsArgs? selecteddetails)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<Category> categories,  List<ProductModel> products,  List<PhoneModel> Featuredproducts,  List<PhoneModel> PhoneList,  bool isLoading,  String? errorMessage,  PhoneModel? selectedProduct,  PhoneModel? selectedProductdetails)?  $default,) {final _that = this;
 switch (_that) {
 case CategoryStateData() when $default != null:
-return $default(_that.categories,_that.products,_that.Featuredproducts,_that.PhoneList,_that.isLoading,_that.errorMessage,_that.selectedProduct,_that.selectedProductdetails,_that.selecteddetails);case _:
+return $default(_that.categories,_that.products,_that.Featuredproducts,_that.PhoneList,_that.isLoading,_that.errorMessage,_that.selectedProduct,_that.selectedProductdetails);case _:
   return null;
 
 }
@@ -214,7 +213,7 @@ return $default(_that.categories,_that.products,_that.Featuredproducts,_that.Pho
 
 
 class CategoryStateData implements CategoryState {
-  const CategoryStateData({required final  List<Category> categories, required final  List<ProductModel> products, required final  List<PhoneModel> Featuredproducts, required final  List<PhoneModel> PhoneList, required this.isLoading, required this.errorMessage, required this.selectedProduct, required this.selectedProductdetails, required this.selecteddetails}): _categories = categories,_products = products,_Featuredproducts = Featuredproducts,_PhoneList = PhoneList;
+  const CategoryStateData({required final  List<Category> categories, required final  List<ProductModel> products, required final  List<PhoneModel> Featuredproducts, required final  List<PhoneModel> PhoneList, required this.isLoading, required this.errorMessage, required this.selectedProduct, required this.selectedProductdetails}): _categories = categories,_products = products,_Featuredproducts = Featuredproducts,_PhoneList = PhoneList;
   
 
  final  List<Category> _categories;
@@ -249,7 +248,6 @@ class CategoryStateData implements CategoryState {
 @override final  String? errorMessage;
 @override final  PhoneModel? selectedProduct;
 @override final  PhoneModel? selectedProductdetails;
-@override final  ProductDetailsArgs? selecteddetails;
 
 /// Create a copy of CategoryState
 /// with the given fields replaced by the non-null parameter values.
@@ -261,16 +259,16 @@ $CategoryStateDataCopyWith<CategoryStateData> get copyWith => _$CategoryStateDat
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is CategoryStateData&&const DeepCollectionEquality().equals(other._categories, _categories)&&const DeepCollectionEquality().equals(other._products, _products)&&const DeepCollectionEquality().equals(other._Featuredproducts, _Featuredproducts)&&const DeepCollectionEquality().equals(other._PhoneList, _PhoneList)&&(identical(other.isLoading, isLoading) || other.isLoading == isLoading)&&(identical(other.errorMessage, errorMessage) || other.errorMessage == errorMessage)&&(identical(other.selectedProduct, selectedProduct) || other.selectedProduct == selectedProduct)&&(identical(other.selectedProductdetails, selectedProductdetails) || other.selectedProductdetails == selectedProductdetails)&&(identical(other.selecteddetails, selecteddetails) || other.selecteddetails == selecteddetails));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CategoryStateData&&const DeepCollectionEquality().equals(other._categories, _categories)&&const DeepCollectionEquality().equals(other._products, _products)&&const DeepCollectionEquality().equals(other._Featuredproducts, _Featuredproducts)&&const DeepCollectionEquality().equals(other._PhoneList, _PhoneList)&&(identical(other.isLoading, isLoading) || other.isLoading == isLoading)&&(identical(other.errorMessage, errorMessage) || other.errorMessage == errorMessage)&&(identical(other.selectedProduct, selectedProduct) || other.selectedProduct == selectedProduct)&&(identical(other.selectedProductdetails, selectedProductdetails) || other.selectedProductdetails == selectedProductdetails));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_categories),const DeepCollectionEquality().hash(_products),const DeepCollectionEquality().hash(_Featuredproducts),const DeepCollectionEquality().hash(_PhoneList),isLoading,errorMessage,selectedProduct,selectedProductdetails,selecteddetails);
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_categories),const DeepCollectionEquality().hash(_products),const DeepCollectionEquality().hash(_Featuredproducts),const DeepCollectionEquality().hash(_PhoneList),isLoading,errorMessage,selectedProduct,selectedProductdetails);
 
 @override
 String toString() {
-  return 'CategoryState(categories: $categories, products: $products, Featuredproducts: $Featuredproducts, PhoneList: $PhoneList, isLoading: $isLoading, errorMessage: $errorMessage, selectedProduct: $selectedProduct, selectedProductdetails: $selectedProductdetails, selecteddetails: $selecteddetails)';
+  return 'CategoryState(categories: $categories, products: $products, Featuredproducts: $Featuredproducts, PhoneList: $PhoneList, isLoading: $isLoading, errorMessage: $errorMessage, selectedProduct: $selectedProduct, selectedProductdetails: $selectedProductdetails)';
 }
 
 
@@ -281,7 +279,7 @@ abstract mixin class $CategoryStateDataCopyWith<$Res> implements $CategoryStateC
   factory $CategoryStateDataCopyWith(CategoryStateData value, $Res Function(CategoryStateData) _then) = _$CategoryStateDataCopyWithImpl;
 @override @useResult
 $Res call({
- List<Category> categories, List<ProductModel> products, List<PhoneModel> Featuredproducts, List<PhoneModel> PhoneList, bool isLoading, String? errorMessage, PhoneModel? selectedProduct, PhoneModel? selectedProductdetails, ProductDetailsArgs? selecteddetails
+ List<Category> categories, List<ProductModel> products, List<PhoneModel> Featuredproducts, List<PhoneModel> PhoneList, bool isLoading, String? errorMessage, PhoneModel? selectedProduct, PhoneModel? selectedProductdetails
 });
 
 
@@ -298,7 +296,7 @@ class _$CategoryStateDataCopyWithImpl<$Res>
 
 /// Create a copy of CategoryState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? categories = null,Object? products = null,Object? Featuredproducts = null,Object? PhoneList = null,Object? isLoading = null,Object? errorMessage = freezed,Object? selectedProduct = freezed,Object? selectedProductdetails = freezed,Object? selecteddetails = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? categories = null,Object? products = null,Object? Featuredproducts = null,Object? PhoneList = null,Object? isLoading = null,Object? errorMessage = freezed,Object? selectedProduct = freezed,Object? selectedProductdetails = freezed,}) {
   return _then(CategoryStateData(
 categories: null == categories ? _self._categories : categories // ignore: cast_nullable_to_non_nullable
 as List<Category>,products: null == products ? _self._products : products // ignore: cast_nullable_to_non_nullable
@@ -308,8 +306,7 @@ as List<PhoneModel>,isLoading: null == isLoading ? _self.isLoading : isLoading /
 as bool,errorMessage: freezed == errorMessage ? _self.errorMessage : errorMessage // ignore: cast_nullable_to_non_nullable
 as String?,selectedProduct: freezed == selectedProduct ? _self.selectedProduct : selectedProduct // ignore: cast_nullable_to_non_nullable
 as PhoneModel?,selectedProductdetails: freezed == selectedProductdetails ? _self.selectedProductdetails : selectedProductdetails // ignore: cast_nullable_to_non_nullable
-as PhoneModel?,selecteddetails: freezed == selecteddetails ? _self.selecteddetails : selecteddetails // ignore: cast_nullable_to_non_nullable
-as ProductDetailsArgs?,
+as PhoneModel?,
   ));
 }
 
